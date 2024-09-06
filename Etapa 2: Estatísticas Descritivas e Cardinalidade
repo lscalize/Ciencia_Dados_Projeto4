@@ -1,0 +1,9 @@
+# Verificando as informações estatísticas da base
+base_titanic.describe()
+
+# Verificando a cardinalidade (quantidade de valores únicos por coluna)
+base_titanic.nunique().sort_values(ascending=False)
+
+# Extraindo o índice e os valores da cardinalidade para visualização posterior
+base_titanic.nunique().index
+base_titanic.nunique().values
