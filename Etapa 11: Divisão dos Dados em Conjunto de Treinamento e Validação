@@ -1,0 +1,10 @@
+# Divisão da base em treinamento e validação:
+
+# Importando a biblioteca
+from sklearn.model_selection import train_test_split
+X = base_titanic_tratada.drop('Survived', axis=1)
+y = base_titanic_tratada['Survived']
+X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
+
+*Define as características (X) e o alvo (y) separando a coluna 'Survived', que é a variável de interesse a ser prevista.
+*Divide os dados em conjunto de treinamento (80%) e validação (20%) usando train_test_split.
