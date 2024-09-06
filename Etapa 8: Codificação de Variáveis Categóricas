@@ -1,0 +1,15 @@
+# Identificação e codificação de variáveis categóricas:
+base_titanic_tratada['Sex'].unique()
+base_titanic_tratada['Embarked'].unique()
+base_titanic_tratada['Pclass'].unique()
+
+# Codificação de variáveis categóricas usando One-Hot Encoding:
+base_titanic_tratada = pd.get_dummies(base_titanic_tratada, columns=['Sex', 'Embarked'], drop_first=True)
+base_titanic_tratada = pd.get_dummies(base_titanic_tratada, columns=['Pclass'], drop_first=True)
+
+*Converte as colunas 'Sex', 'Embarked' e 'Pclass' em variáveis binárias usando One-Hot Encoding.
+*A opção drop_first=True remove a primeira categoria para evitar multicolinearidade.
+
+# Verificação da codificação:
+base_titanic_tratada.head(3)
+base_titanic_tratada.columns
