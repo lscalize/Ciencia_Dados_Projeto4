@@ -1,0 +1,13 @@
+# Escalonamento das colunas numéricas 'Age' e 'Fare':
+
+# Importa o StandardScaler para padronizar as colunas numéricas
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+base_titanic_tratada[['Age', 'Fare']] = scaler.fit_transform(base_titanic_tratada[['Age', 'Fare']])
+base_titanic_tratada.head(4)
+
+Salvar o DataFrame escalonado para facilitar a manipulação:
+base_titanic_tratada.to_csv('base_titanic_tratada.csv', index=False)
+base_titanic_tratada = pd.read_csv('base_titanic_tratada.csv')
+base_titanic_tratada.head(2)
+
