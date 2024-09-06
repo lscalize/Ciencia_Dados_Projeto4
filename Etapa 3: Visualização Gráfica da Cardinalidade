@@ -1,0 +1,6 @@
+# Gráfico de barras da cardinalidade por coluna
+fig, ax = plt.subplots(figsize=(15,6))
+ax.bar(base_titanic.nunique().sort_values(ascending=False).index, 
+       base_titanic.nunique().sort_values(ascending=False).values)
+ax.tick_params(axis='x', labelrotation=75)
+plt.show()
