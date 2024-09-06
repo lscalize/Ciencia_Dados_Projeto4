@@ -1,0 +1,8 @@
+# Remoção das colunas 'Name' e 'Ticket':
+
+base_titanic_tratada = base_titanic_tratada.drop('Name', axis=1)
+base_titanic_tratada = base_titanic_tratada.drop('Ticket', axis=1)
+base_titanic_tratada.head(3)
+
+# Salvar o DataFrame após a remoção:
+base_titanic_tratada.to_csv('base_titanic_tratada.csv', index=False)
