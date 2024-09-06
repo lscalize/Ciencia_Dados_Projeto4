@@ -1,0 +1,9 @@
+# Histograma das tarifas (Fare)
+fig, ax = plt.subplots()
+ax.hist(base_titanic['Fare'], bins=20)
+plt.show()
+
+# Histograma das idades (Age)
+fig, ax = plt.subplots()
+ax.hist(base_titanic['Age'], bins=20)
+plt.show()
