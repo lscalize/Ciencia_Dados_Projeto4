@@ -1,0 +1,13 @@
+# Boxplot para a coluna 'Fare' (tarifa)
+fig, ax = plt.subplots()
+ax.boxplot(base_titanic['Fare'])
+plt.show()
+
+# Calculando o interquartil (Q1 e Q3) e o valor máximo para identificar outliers
+Q1 = base_titanic['Fare'].describe()['25%']
+Q3 = base_titanic['Fare'].describe()['75%']
+interquartil = Q3 - Q1
+vlr_max = Q3 + 1.5 * interquartil
+
+# Filtrando valores acima do máximo (outliers)
+base_titanic[base_titanic['Fare'] > vlr_max]
