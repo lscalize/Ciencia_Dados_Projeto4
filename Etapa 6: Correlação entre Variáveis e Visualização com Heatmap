@@ -1,0 +1,4 @@
+# Heatmap da correlação entre as variáveis numéricas
+correlation = base_titanic.corr(numeric_only=True)
+sns.heatmap(correlation, annot=True, cmap='RdYlGn')
+plt.show()
