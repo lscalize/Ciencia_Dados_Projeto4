@@ -1,0 +1,25 @@
+# Entendimento de valores vazios:
+base_titanic.isnull().sum()
+base_titanic.Age.mean()
+base_titanic.Embarked.describe()
+base_titanic.Cabin.describe()
+
+# Tratamento de valores nulos para 'Age':
+base_titanic.loc[base_titanic.Age.isnull(), 'Age'] = base_titanic.Age.mean()
+base_titanic.Age.info()
+
+# Tratamento de valores nulos para 'Embarked':
+base_titanic.loc[base_titanic.Embarked.isnull(), 'Embarked'] = base_titanic['Embarked'] == 'S'
+base_titanic.Embarked.info()
+
+# Remoção da coluna 'Cabin':
+import pandas as pd
+base_titanic = base_titanic.drop('Cabin', axis=1)
+base_titanic.info()
+
+# Salvar a base tratada em um novo CSV:
+base_titanic.to_csv('base_titanic_tratada.csv', index=False)
+base_titanic_tratada = pd.read_csv('base_titanic_tratada.csv')
+base_titanic_tratada.info()
+
+*Salva o DataFrame tratado como um arquivo CSV para facilitar o acesso e manipulação futura.
