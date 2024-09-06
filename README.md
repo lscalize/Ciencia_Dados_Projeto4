@@ -90,7 +90,7 @@ Após a comparação de todos os modelos, o **XGBoost** apresentou o melhor dese
 ## 8. Conclusão
 O projeto demonstrou a importância do pré-processamento e do ajuste de hiperparâmetros para obter o melhor desempenho dos modelos. O **XGBoost** se destacou como o modelo mais eficaz, devido à sua capacidade de lidar com interações complexas entre as variáveis e realizar ajustes automáticos.
 
-## 9. Próximos Passos
+## 9. Sugestão de Próximos Passos
 - **Feature Engineering**: Investigar a criação de novas variáveis a partir dos dados existentes, como agrupamento de idades ou tarifas, pode trazer melhorias adicionais.
 - **Stacking de Modelos**: Experimente a técnica de ensemble combinando os resultados de múltiplos modelos para aumentar a acurácia.
 - **Validação Cruzada**: Implementar uma validação cruzada mais robusta para garantir que os resultados sejam consistentes em diferentes subconjuntos de dados.
