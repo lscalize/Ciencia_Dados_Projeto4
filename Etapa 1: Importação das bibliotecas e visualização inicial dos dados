@@ -1,0 +1,23 @@
+# Importando as bibliotecas necessárias
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Importando a base de dados Titanic (treino)
+base_titanic = pd.read_csv('/content/train.csv')
+
+# Visualizando as 3 primeiras e últimas linhas do dataset para verificar a estrutura
+base_titanic.head(3)
+base_titanic.tail(3)
+
+# Verificando o tamanho da base (número de linhas e colunas)
+base_titanic.shape
+
+# Verificando os nomes das colunas da base
+base_titanic.columns
+
+# Verificando as informações gerais do dataset, como tipos de dados e presença de nulos
+base_titanic.info()
+
+# Contando a quantidade de valores nulos por coluna
+base_titanic.isnull().sum().sort_values(ascending=False)
