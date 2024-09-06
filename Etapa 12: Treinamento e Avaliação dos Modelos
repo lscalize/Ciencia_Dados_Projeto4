@@ -1,0 +1,139 @@
+# Importando bibliotecas necessárias para todos os modelos
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+from xgboost import XGBClassifier
+
+# Iniciando pelo MODELO DE REGRESSÃO LOGÍSTICA
+
+# Inicializando e treinando o modelo
+modelo_regressao_logistica = LogisticRegression()
+modelo_regressao_logistica.fit(X_train, y_train)
+
+# Prevendo no conjunto de validação
+previsao_regressao_log = modelo_regressao_logistica.predict(X_val)
+
+# Avaliando o modelo
+print(f"Acurácia: {accuracy_score(y_val, previsao_regressao_log)}")
+print(classification_report(y_val, previsao_regressao_log))
+
+# Matriz de Confusão
+matriz_confusao_reg_log = confusion_matrix(y_val, previsao_regressao_log)
+sns.heatmap(matriz_confusao_reg_log, annot=True, fmt="d", cmap="Blues")
+plt.title("Matriz de Confusão - Regressão Logística")
+plt.xlabel("Previsto")
+plt.ylabel("Real")
+plt.show()
+
+# MODELO K-Nearest Neighbors (KNN)
+
+# Inicializando e treinando o modelo
+modelo_knn = KNeighborsClassifier(n_neighbors=5)
+modelo_knn.fit(X_train, y_train)
+
+# Prevendo no conjunto de validação
+previsao_knn = modelo_knn.predict(X_val)
+
+# Avaliando o modelo
+print(f"Acurácia: {accuracy_score(y_val, previsao_knn)}")
+print(classification_report(y_val, previsao_knn))
+
+# Matriz de Confusão
+matriz_confusao_knn = confusion_matrix(y_val, previsao_knn)
+sns.heatmap(matriz_confusao_knn, annot=True, fmt="d", cmap="Blues")
+plt.title("Matriz de Confusão - KNN")
+plt.xlabel("Previsto")
+plt.ylabel("Real")
+plt.show()
+
+# MODELO ÁRVORE DE DECISÃO
+
+# Inicializando e treinando o modelo
+modelo_arvore_decisao = DecisionTreeClassifier(random_state=42)
+modelo_arvore_decisao.fit(X_train, y_train)
+
+# Prevendo no conjunto de validação
+previsao_arvore_decisao = modelo_arvore_decisao.predict(X_val)
+
+# Avaliando o modelo
+print(f"Acurácia: {accuracy_score(y_val, previsao_arvore_decisao)}")
+print(classification_report(y_val, previsao_arvore_decisao))
+
+# Matriz de Confusão
+matriz_confusao_arvore = confusion_matrix(y_val, previsao_arvore_decisao)
+sns.heatmap(matriz_confusao_arvore, annot=True, fmt="d", cmap="Blues")
+plt.title("Matriz de Confusão - Arvore Decisao")
+plt.xlabel("Previsto")
+plt.ylabel("Real")
+plt.show()
+
+# MODELO RANDOM FOREST
+
+# Inicializando e treinando o modelo
+modelo_random_forest = RandomForestClassifier(random_state=42)
+modelo_random_forest.fit(X_train, y_train)
+
+# Prevendo no conjunto de validação
+previsao_random_forest = modelo_random_forest.predict(X_val)
+
+# Avaliando o modelo
+print(f"Acurácia: {accuracy_score(y_val, previsao_random_forest)}")
+print(classification_report(y_val, previsao_random_forest))
+
+# Matriz de Confusão
+matriz_random_forest = confusion_matrix(y_val, previsao_random_forest)
+sns.heatmap(matriz_random_forest, annot=True, fmt="d", cmap="Blues")
+plt.title("Matriz de Confusão - Random Forest")
+plt.xlabel("Previsto")
+plt.ylabel("Real")
+plt.show()
+
+# MODELO SVM
+
+# Inicializando e treinando o modelo
+modelo_svm = SVC(random_state=42)
+modelo_svm.fit(X_train, y_train)
+
+# Prevendo no conjunto de validação
+previsao_svm = modelo_svm.predict(X_val)
+
+# Avaliando o modelo
+print(f"Acurácia: {accuracy_score(y_val, previsao_svm)}")
+print(classification_report(y_val, previsao_svm))
+
+# Matriz de Confusão
+matriz_svm = confusion_matrix(y_val, previsao_svm)
+sns.heatmap(matriz_svm, annot=True, fmt="d", cmap="Blues")
+plt.title("Matriz de Confusão - SVM")
+plt.xlabel("Previsto")
+plt.ylabel("Real")
+plt.show()
+
+# MODELO Gradient Boosting (XGBoost)
+
+# Inicializando e treinando o modelo
+modelo_xgb = XGBClassifier(random_state=42)
+modelo_xgb.fit(X_train, y_train)
+
+# Prevendo no conjunto de validação
+previsao_xgb = modelo_xgb.predict(X_val)
+
+# Avaliando o modelo
+print(f"Acurácia: {accuracy_score(y_val, previsao_xgb)}")
+print(classification_report(y_val, previsao_xgb))
+
+# Matriz de Confusão
+matriz_xgb = confusion_matrix(y_val, previsao_xgb)
+sns.heatmap(matriz_xgb, annot=True, fmt="d", cmap="Blues")
+plt.title("Matriz de Confusão - XGBoost")
+plt.xlabel("Previsto")
+plt.ylabel("Real")
+plt.show()
+
+
